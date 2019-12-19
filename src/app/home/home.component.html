@@ -1,0 +1,29 @@
+<div>
+    HomeComponent - Part of app.module.ts
+</div>
+
+Text Editor:
+<hr />
+<app-text-editor
+    [showCharacterCount]="true"
+    [characterCountMax]="characterCountMax"
+    [heightMin]="200"
+    (contentChanged)="onContentChanged($event)"
+>
+</app-text-editor>
+<span>{{textEditor1Value}}</span>
+<br/><br />
+
+Text Editor Reactive Forms:
+<hr />
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-text-editor
+        [showCharacterCount]="true"
+        [characterCountMax]="characterCountMax"
+        [heightMin]="200"
+        [formControlName]="textFormControlName"
+    >
+    </app-text-editor>
+    <button type="submit">Submit</button>
+</form>
+<span>{{textEditor2Value}}</span>
